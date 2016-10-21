@@ -1,4 +1,6 @@
-/*criação de procedures*/
+/*
+criação de procedures
+*/
 create or replace procedure proc_inserir_pessoa(
   par_nome in pessoa.nome%type
 )
