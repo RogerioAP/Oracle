@@ -12,12 +12,13 @@ begin
   commit;
 end proc_inserir_pessoa;
 /
+commit;
 
 begin
-  proc_inserir_pessoa('Rodrigo');
+  proc_inserir_pessoa('Rogerio'); /*abaixo mais uma chamada, com a finalidade de testar nos select's depois*/
+  proc_inserir_pessoa('Gabriela');
 end;
 /
-
 
 
 create or replace procedure proc_inserir_produto(
@@ -31,12 +32,14 @@ begin
   commit;
 end proc_inserir_produto;
 /
+commit;
 
 begin
+  proc_inserir_produto('Chocolate');
+  proc_inserir_produto('Café');
   proc_inserir_produto('Açúcar');
 end;
 /
-
 
 
 create or replace procedure proc_inserir_venda(
@@ -50,9 +53,12 @@ begin
   commit;
 end proc_inserir_venda;
 /
+commit;
 
 begin
-  proc_inserir_venda(3);
+  proc_inserir_venda(1);
+  proc_inserir_venda(1);
+  proc_inserir_venda(2);
 end;
 /
 
@@ -67,8 +73,17 @@ begin
   commit;
 end proc_inserir_produto_vendido;
 /
+commit;
 
 begin
-  proc_inserir_produto_vendido(4, 3);
+  proc_inserir_produto_vendido(1, 1);
+  proc_inserir_produto_vendido(1, 2);
+  
+  proc_inserir_produto_vendido(2, 1);
+  proc_inserir_produto_vendido(2, 2);
+  proc_inserir_produto_vendido(2, 3);
+  
+  proc_inserir_produto_vendido(3, 2);
+  proc_inserir_produto_vendido(3, 3);
 end;
 /
