@@ -1,1 +1,1 @@
-# Teste
+Apenas alguns comandos utilizados no Oracle
